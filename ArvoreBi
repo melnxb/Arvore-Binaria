@@ -1,0 +1,65 @@
+import java.util.*;
+/*Exercícios
+1. Escreva um algoritmo para inserir um elemento em uma árvore binária de busca.
+2. Escreva algoritmos para percorrer uma árvore binária nas formas préordem, inordem e pósordem.
+3. Escreva um algoritmo para remover o maior elemento de uma árvore binária de busca.
+4. Escreva um algoritmo para remover o menor elemento de uma árvore binária de busca.
+5. Considere que uma árvore binária de busca não possui elementos repetidos. Escreva um
+algoritmo que remova um determinado elemento com valor N da árvore.
+*/
+
+class Node {
+  Node noEsq, noDir;
+  int valor;
+  
+  public Node(int elemento){ 
+    this.valor= elemento;
+  }
+  public int getValor() {
+    return valor;
+  }
+  public void setValor(int valor) {
+    this.valor = valor;
+  }
+  
+  public Node getNoEsq(){
+    return noEsq;
+  }
+  public void setNoEsquerda(Node noEsq){
+    this.noEsq = noEsq;
+  }
+  public Node getNoDir(){
+    return noDir;
+  }
+  public void setNoDir(Node noDir){
+    this.noDir= noDir;
+  }
+}
+class ArvoreB {
+  Node root;  //raiz da arvore
+  //root=null;
+  
+  public void inserir(Node node, int valor) {
+    if (this.root== null){
+      this.root = new Node(valor);
+    }else {
+      if (valor<node.getValor()){
+        if (node.getNoEsq()!= null){
+        inserir (node.getNoEsq(), valor);
+        }else{
+          node.setNoesq(new Node(valor));
+        }
+      }else if (valor> node.getValor()){
+        if (node.getNoDir() !=null) {
+          inserir(node.getNodir(), valor);
+        }else{ node.setNoDir(new Node(valor));
+        }
+      }
+    }}//erro nao estava declarando esse inserir
+  public void inserir(int valor){
+    inserir(this.root,valor);
+  }
+  public void ordem(Node node){
+    if (node != null){}
+  }
+}
